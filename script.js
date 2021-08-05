@@ -265,12 +265,12 @@ var controller = {
     onSettingsChanged() {
         clockStates = settingModel.getSetting();
         this.model.reset();
-        this.view.clearHeader();
         this.updateUI();
     },
     updateUI() {
         //Check the state of the clock
         this.view.updateTime(convertTimeToString(this.model.getTime()));
+        this.view.clearHeader();
         this.view.changeMainButton(false);
         switch (this.model.getState()) {
             case "podomoro":
