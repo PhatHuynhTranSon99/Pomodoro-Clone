@@ -239,7 +239,9 @@ var controller = {
         }
     },
     changeClockState(state) {
-        this.model.changeState(state);
+        if (confirm("All progress will be loss. Will you proceed ?")) {
+            this.model.changeState(state);
+        }
         this.updateUI();
     },
     startClock() {
