@@ -239,10 +239,11 @@ var controller = {
         }
     },
     changeClockState(state) {
-        if (confirm("All progress will be loss. Will you proceed ?")) {
+        if ((this.hasClockStarted && confirm("All progress will be loss. Will you proceed ?")) ||
+            !this.hasClockStarted) {
             this.model.changeState(state);
+            this.updateUI();
         }
-        this.updateUI();
     },
     startClock() {
         this.view.changeMainButton(true);
