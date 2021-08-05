@@ -265,6 +265,7 @@ var controller = {
     onSettingsChanged() {
         clockStates = settingModel.getSetting();
         this.model.reset();
+        this.view.clearHeader();
         this.updateUI();
     },
     updateUI() {
