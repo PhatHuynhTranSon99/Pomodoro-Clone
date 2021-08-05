@@ -1,0 +1,304 @@
+/* Reset */
+html {
+    box-sizing: border-box;
+}
+
+*,
+*::before,
+*::after {
+    box-sizing: inherit;
+}
+
+html,
+body,
+*,
+*::before,
+*::after {
+    padding: 0;
+    margin: 0;
+}
+
+/* Font */
+body {
+    font-size: 16px;
+    font-family: 'Roboto', sans-serif;
+}
+
+/* Main section */
+
+/* Clock section */
+.clock-section {
+    height: 100vh;
+    background-color: #f4a261;
+    display: flex;
+    flex-flow: column nowrap;
+    justify-content: center;
+    align-items: center;
+    transition: background linear 0.2s;
+}
+
+.clock {
+    background-color: rgba(255, 255, 255, 0.2);
+    padding: 1.5rem 2.5rem;
+    text-align: center;
+    border-radius: 10px;
+}
+
+.clock .time {
+    font-size: 4rem;
+    color: white;
+    margin: 1.5rem auto;
+    transition: all linear 0.2s;
+}
+
+/* Setting section */
+.settings {
+    background-color: rgba(255, 255, 255, 0.3);
+    border-radius: 50%;
+    border: none;
+    padding: 0.5rem;
+    margin-bottom: 2rem;
+    cursor: pointer;
+}
+
+.settings:hover {
+    background-color: rgba(255, 255, 255, 0.2)
+}
+
+.settings img {
+    width: 2.5rem;
+    height: 2.5rem;
+}
+
+/* Modal styling */
+.modal {
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.2);
+    position: fixed;
+    left: 0;
+    top: 0;
+    z-index: 1;
+    display: none;
+    align-items: center;
+    justify-content: center;
+}
+
+.modal-content {
+    background-color: #f8edeb;
+    padding: 1.5rem 2rem;
+    width: 80%;
+    border-radius: 1rem;
+}
+
+.modal-header {
+    display: flex;
+    justify-content: space-between;
+}
+
+.modal-header h2 {
+    order: -1;
+}
+
+.modal-header button {
+    font-size: 2rem;
+    transform: translateY(-0.4rem);
+    cursor: pointer;
+    border: none;
+    background-color: transparent;
+}
+
+.modal-header button:hover {
+    color: #e76f51;
+}
+
+.divider {
+    width: 100%;
+    margin: .75rem 0;
+    height: 2px;
+    background-color: #ced4da;
+}
+
+/* Input and form section */
+.modal-form h3 {
+    margin-bottom: 1rem;
+}
+
+input {
+    font-family: 'Robot' sans-serif;
+    margin-bottom: .75rem;
+    padding: 0.5rem;
+    border: none;
+    border-radius: 5px;
+    width: 100%;
+    font-size: 1.2rem;
+}
+
+input:focus {
+    outline: 3px solid #e76f51;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+}
+
+.modal-form button {
+    width: 100%;
+    padding: 0.5rem 1.5rem;
+    font-size: 1.2rem;
+    background-color: #f4a261;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    margin-top: 1rem;
+    cursor: pointer;
+}
+
+.modal-form button:hover {
+    background-color: #e76f51;
+}
+
+/* Text section */
+.text-section {
+    min-height: 100vh;
+    background-color: #f8edeb;
+    padding: 3rem;
+}
+
+.text-section article {
+    width: 80%;
+    margin: 0 auto;
+}
+
+.title {
+    font-size: 1.7rem;
+    margin-bottom: 2.5rem;
+    position: relative;
+}
+
+.title::after {
+    content: "";
+    display: block;
+    width: 10%;
+    height: 5px;
+    background-color: #e76f51;
+    position: absolute;
+    bottom: -1.2rem;
+    border-radius: 200rem;
+}
+
+.text {
+    font-size: 1.2rem;
+    font-weight: lighter;
+    line-height: 2rem;
+    margin-bottom: 2rem;
+}
+
+li {
+    font-size: 1.2rem;;
+    line-height: 2rem;
+}
+
+ol {
+    margin-left: 1.5rem;
+}
+
+/* Button */
+.button, .inverted-button {
+    font-family: 'Roboto', sans-serif;
+}
+
+.button {
+    font-size: 1rem;
+    background-color: white;
+    padding: 0.75rem 0.75rem;
+    border: none;
+    border-bottom: 7px solid #e5e5e5;
+    cursor: pointer;
+    width: 50%;
+    letter-spacing: 1px;
+    border-radius: 5px;
+    color: #f4a261;
+    font-weight: bold
+}
+
+.button:active, .clicked {
+    border-bottom: 7px solid rgba(255, 255, 255, 0);
+    transform: translateY(7px);
+}
+
+.inverted-button {
+    border: none;
+    border-radius: 5px;
+    background-color: transparent;
+    color: white;
+    font-size: 1rem;
+    font-weight: bold;
+    margin: 0 .5rem;
+    padding: 0.5rem 0.75rem;
+    cursor: pointer;
+}  
+
+.inverted-clicked {
+    background-color: rgba(0, 0, 0, 0.1);
+}
+
+/* Buttons */
+.buttons {
+    display: flex;
+    flex-flow: column nowrap;
+}
+
+.buttons .inverted-button {
+    margin-bottom: 0.5rem;
+}
+
+/* Link in text */
+.text-link {
+    text-decoration: none;
+    color: #e76f51;
+}
+
+/* Tablet and Desktop */
+@media only screen and (min-width: 550px) {
+    .text-section article {
+        width: 50%;
+    }
+
+    .buttons {
+        flex-flow: row nowrap;
+        margin-bottom: 0;
+    }
+
+    .buttons .inverted-button {
+        margin-bottom: 0;
+    }
+
+    .clock .time {
+        font-size: 8rem;
+    }
+
+    .button {
+        font-size: 1.5rem;
+    }
+
+    .modal-content {
+        width: 50%;
+    }
+
+    .inputs {
+        display: flex;
+        justify-content: space-between;
+        width: 100%;
+    }
+
+    .inputs div {
+        flex: 0 0 30%;
+    }
+
+    .modal-form button {
+        float: right;
+        width: auto;
+    }
+}

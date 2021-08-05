@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet"> 
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="favicon.ico">
+    <title>Podomoro Clock</title>
+</head>
+<body>
+    <main>
+        <div class="modal">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <button class="modal-close">&times;</button>
+                    <h2 class="modal-title">Timer settings</h2>
+                </div>
+
+                <div class="divider"></div>
+                
+                <form class="modal-form">
+                    <h3>Time (minutes)</h3>
+
+                    <div class="inputs">
+                        <div>
+                            <label for="podo">Podomoro</label>
+                            <input type="number" class="input podo-input" id="podo" value="25"/>
+                        </div>
+
+                        <div>
+                            <label for="short-b">Short break</label>
+                            <input type="number" class="input short-break-input" id="short-b" value="5"/>
+                        </div>
+
+                        <div>
+                            <label for="long-b">Long break</label>
+                            <input type="number" class="input long-break-input" id="long-b" value="5"/>
+                        </div>
+                    </div>
+
+                    <button>Save</button>
+                </form>
+            </div>
+        </div>
+
+        <div class="clock-section">
+            <button class="settings">
+                <img src="./images/setting.svg" alt="Settings icon">
+            </button>
+            <div class="clock">
+                <div class="buttons">
+                    <button class="inverted-button inverted-clicked podomoro">Podomoro</button>
+                    <button class="inverted-button short-break">Short break</button>
+                    <button class="inverted-button long-break">Long break</button>
+                </div>
+                <h1 class="time">25:00</h1>
+                <button class="button">Start</button>
+            </div>
+        </div>
+
+        <div class="text-section">
+            <article>
+                <h2 class="title">What is Podomofo ?</h2>
+                <p class="text">
+                    Podomofo is a podomoro application which is a simple clone of the web app <a href="https://pomofocus.io/" class="text-link">Pomofocus</a> for education purpose only
+                </p>
+
+                <h2 class="title">What is Podomoro Technique ?</h2>
+                <p class="text">
+                    The Pomodoro Technique is created by Francesco Cirillo for a more productive way to work and study. 
+                    The technique uses a timer to break down work into intervals, traditionally 25 minutes in length, separated by short breaks. 
+                    Each interval is known as a pomodoro, from the Italian word for 'tomato', after the tomato-shaped kitchen timer that Cirillo used as a university student.
+                </p>
+
+                <h2 class="title">How to use the Podomoro Timer? </h2>
+                <p class="text">
+                    <ol>
+                        <li>Start timer and work for 25 minutes</li>
+                        <li>Take a 5-minute break</li>
+                        <li>Repeat</li>
+                        <li>After each 2 hours, take a long break</li>
+                    </ol>
+                </p>
+            </article>
+        </div>
+    </main>
+    <script src="setting-modal.js"></script>
+    <script src="sound.js"></script>
+    <script src="helper.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
