@@ -161,7 +161,6 @@ label {
 
 /* Text section */
 .text-section {
-    min-height: 100vh;
     background-color: #f8edeb;
     padding: 3rem;
 }

@@ -104,9 +104,12 @@ var view = {
     clearHeader() {
         document.title = "Pomodoro clock";
     },
-    requestNotification() {
-        if (Notification.permission != "granted") {
-            Notification.requestPermission();
+    async requestNotification() {
+        if (Notification.permission !== "granted") {
+            let result = await Notification.requestPermission();
+            if (result !== "granted") {
+                alert("Notification is recommened !!!");
+            }
         }
     },
     notify(state) {
@@ -225,6 +228,9 @@ var controller = {
         this.view.onPodomoroClicked(() => this.changeClockState("pomodoro"));
         this.view.onShortBreakClicked(() => this.changeClockState("short-break"));
         this.view.onLongBreakClicked(() => this.changeClockState("long-break"));
+
+        //Request notification
+        this.view.requestNotification();
 
         //Set on setting changed
         settingModel.onSettingsChanged(() => this.onSettingsChanged());
